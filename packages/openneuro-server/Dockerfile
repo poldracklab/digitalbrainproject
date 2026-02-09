@@ -1,4 +1,4 @@
-FROM ghcr.io/rwblair/openneuro/node AS build
+FROM ghcr.io/poldracklab/digitalbrainproject/node AS build
 
 # install server app
 WORKDIR /srv/packages/openneuro-server
