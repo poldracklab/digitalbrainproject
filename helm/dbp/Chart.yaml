@@ -2,10 +2,10 @@ apiVersion: v1
 name: dbp-test
 version: 1.8.0
 description: test deployment chart
-home: https://digitalbrainlife.openfmir.org
+home: https://digitalbrainlife.openfmri.org
 sources:
   - https://github.com/rwblair/openneuro
-appVersion: 4.44.7
+appVersion: 0.0.1
 dependencies:
   - name: redis
     version: 22.0.7
