@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: {{ .Release.Name }}-api
-          image: 'ghcr.io/rwblair/openneuro/server:v{{ .Chart.AppVersion }}'
+          image: '{{ .Values.containerNamespace }}/server:v{{ .Chart.AppVersion }}'
           resources:
             requests:
               cpu: {{ .Values.apiCpuRequests }}

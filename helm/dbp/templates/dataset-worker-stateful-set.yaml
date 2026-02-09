@@ -37,7 +37,7 @@ spec:
             mode: 0400
       containers:
       - name: {{ .Release.Name }}-dataset-worker
-        image: 'ghcr.io/rwblair/openneuro/datalad-service:v{{ .Chart.AppVersion }}'
+        image: '{{ .Values.containerNamespace }}/datalad-service:v{{ .Chart.AppVersion }}'
         command: ["uvicorn", "--host", "0.0.0.0", "--port", "80", "--factory", "datalad_service.app:create_app", "--workers", "12", "--timeout-keep-alive", "30"]
         resources:
           requests:
@@ -69,7 +69,7 @@ spec:
           mountPath: /datalad-key
           subPath: datalad-key
       - name: {{ .Release.Name }}-dataset-taskiq-worker
-        image: 'ghcr.io/rwblair/openneuro/datalad-service:v{{ .Chart.AppVersion }}'
+        image: '{{ .Values.containerNamespace }}/datalad-service:v{{ .Chart.AppVersion }}'
         command: ['/srv/.venv/bin/taskiq', 'worker', 'datalad_service.broker:broker', '--tasks-pattern', 'datalad_service/tasks/*.py', '--fs-discover', '--max-async-tasks', '2', '--use-process-pool']
         resources:
           requests:
