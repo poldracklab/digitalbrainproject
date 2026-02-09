@@ -1,7 +1,7 @@
 {
   "name": "@openneuro/cli",
   "license": "MIT",
-  "version": "4.44.7",
+  "version": "4.45.3",
   "exports": "./mod.ts",
   "publish": {
     "include": [
@@ -18,7 +18,7 @@
   },
   "imports": {
     "@404wolf/xdg-portable": "jsr:@404wolf/xdg-portable@^0.1.0",
-    "@bids/validator": "jsr:@bids/validator@^2.3.1",
+    "@bids/validator": "jsr:@bids/validator@^2.3.2",
     "@cliffy/command": "jsr:@effigies/cliffy-command@1.0.0-dev.8",
     "@cliffy/prompt": "jsr:@cliffy/prompt@^1.0.0-rc.8",
     "@deno-library/progress": "jsr:@deno-library/progress@^1.5.1",
@@ -32,7 +32,7 @@
     "@std/testing": "jsr:@std/testing@^1.0.15",
     "@wok/djwt": "jsr:@wok/djwt@^3.0.2",
     "ignore": "npm:ignore@^5.3.0",
-    "isomorphic-git": "npm:isomorphic-git@1.27.1",
+    "isomorphic-git": "npm:isomorphic-git@1.36.3",
     "hash-wasm": "npm:hash-wasm@^4.12.0"
   }
 }

@@ -34,10 +34,6 @@ export default defineConfig({
     rollupOptions: {
       external: [
         "/crn/config.js",
-        // Dependencies that are only accessed in formatting terminal output
-        "supports-hyperlinks",
-        "ansi-escapes",
-        "@jsr/effigies__cliffy-table",
       ],
     },
   },
@@ -60,6 +56,10 @@ export default defineConfig({
       },
       // Workaround for bids-validator -> hed-validator -> xml2js -> sax -> Stream shim
       { find: "stream", replacement: "stream-browserify" },
+      {
+        find: "supports-hyperlinks",
+        replacement: "./src/deps/support-hyperlinks-stub.js",
+      },
     ],
   },
   plugins: [workaroundAssetImportMetaUrlPluginBug(), nodePolyfills()],
