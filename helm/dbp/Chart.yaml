@@ -1,10 +1,10 @@
 apiVersion: v1
-name: openneuro
+name: dbp-test
 version: 1.8.0
-description: OpenNeuro production deployment chart
-home: https://openneuro.org
+description: test deployment chart
+home: https://digitalbrainlife.openfmir.org
 sources:
-  - https://github.com/openNeuroOrg/openneuro
+  - https://github.com/rwblair/openneuro
 appVersion: 4.44.7
 dependencies:
   - name: redis

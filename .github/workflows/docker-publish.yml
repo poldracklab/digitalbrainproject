@@ -3,84 +3,86 @@ on:
   push:
     tags:
       - "v*.*.*"
+
 jobs:
   build_server:
     name: Server
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: login to docker hub
+      - name: login to registry
         id: docker-hub
-        env:
-          username: ${{secrets.DOCKERHUB_USERNAME}}
-          password: ${{secrets.DOCKERHUB_PASSWORD}}
-        run: |
-          docker login -u $username -p $password
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t openneuro/node:latest .
-          docker build -t openneuro/server:${{ github.ref_name }} packages/openneuro-server
+          docker build -t ghcr.io/${{ github.repository_name }}/node:latest .
+          docker build -t ghcr.io/${{ github.repository_name }}/server:${{ github.ref_name }} packages/openneuro-server
       - name: push the docker image
         id: push-docker-image
-        run: docker push openneuro/server:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ github.repository_name }}/server:${{ github.ref_name }}
+      - name: Log in to the GitHub Container Registry
   build_app:
     name: App
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: login to docker hub
+      - name: login to registry
         id: docker-hub
-        env:
-          username: ${{secrets.DOCKERHUB_USERNAME}}
-          password: ${{secrets.DOCKERHUB_PASSWORD}}
-        run: |
-          docker login -u $username -p $password
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t openneuro/node:latest .
-          docker build -t openneuro/app:${{ github.ref_name }} packages/openneuro-app
+          docker build -t ${{ github.repository_name }}/node:latest .
+          docker build -t ${{ github.repository_name }}/app:${{ github.ref_name }} packages/openneuro-app
       - name: push the docker image
         id: push-docker-image
-        run: docker push openneuro/app:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ github.repository_name }}/app:${{ github.ref_name }}
   build_indexer:
     name: Indexer
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: login to docker hub
+      - name: login to registry
         id: docker-hub
-        env:
-          username: ${{secrets.DOCKERHUB_USERNAME}}
-          password: ${{secrets.DOCKERHUB_PASSWORD}}
-        run: |
-          docker login -u $username -p $password
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t openneuro/node:latest .
-          docker build -t openneuro/indexer:${{ github.ref_name }} packages/openneuro-indexer
+          docker build -t ${{ github.repository_name }}/node:latest .
+          docker build -t ${{ github.repository_name }}/indexer:${{ github.ref_name }} packages/openneuro-indexer
       - name: push the docker image
         id: push-docker-image
-        run: docker push openneuro/indexer:${{ github.ref_name }}
+       run: docker push ghcr.io/${{ github.repository_name }}/indexer:${{ github.ref_name }}
   build_datalad_service:
     name: Datalad Service
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: login to docker hub
+      - name: login to registry
         id: docker-hub
-        env:
-          username: ${{secrets.DOCKERHUB_USERNAME}}
-          password: ${{secrets.DOCKERHUB_PASSWORD}}
-        run: |
-          docker login -u $username -p $password
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: build the docker image
         id: build-docker-image
         run: |
           cd services/datalad
-          docker build --build-arg LERNA_JSON="$(cat ../../lerna.json)" -t openneuro/datalad-service:${{ github.ref_name }} .
+          docker build --build-arg LERNA_JSON="$(cat ../../lerna.json)" -t ${{ github.repository_name }}/datalad-service:${{ github.ref_name }} .
       - name: push the docker image
         id: push-docker-image
-        run: docker push openneuro/datalad-service:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ github.repository_name }}/datalad-service:${{ github.ref_name }}
