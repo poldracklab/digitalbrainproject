@@ -27,7 +27,6 @@ jobs:
       - name: push the docker image
         id: push-docker-image
         run: docker push ghcr.io/${{ github.repository }}/server:${{ github.ref_name }}
-      - name: Log in to the GitHub Container Registry
   build_app:
     name: App
     runs-on: ubuntu-latest
