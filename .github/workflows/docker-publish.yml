@@ -43,8 +43,8 @@ jobs:
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t ${{ github.repository }}/node:latest .
-          docker build -t ${{ github.repository }}/app:${{ github.ref_name }} packages/openneuro-app
+          docker build -t ghcr.io/${{ github.repository }}/node:latest .
+          docker build -t ghcr.io/${{ github.repository }}/app:${{ github.ref_name }} packages/openneuro-app
       - name: push the docker image
         id: push-docker-image
         run: docker push ghcr.io/${{ github.repository }}/app:${{ github.ref_name }}
@@ -63,8 +63,8 @@ jobs:
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t ${{ github.repository }}/node:latest .
-          docker build -t ${{ github.repository }}/indexer:${{ github.ref_name }} packages/openneuro-indexer
+          docker build -t ghcr.io/${{ github.repository }}/node:latest .
+          docker build -t ghcr.io/${{ github.repository }}/indexer:${{ github.ref_name }} packages/openneuro-indexer
       - name: push the docker image
         id: push-docker-image
         run: docker push ghcr.io/${{ github.repository }}/indexer:${{ github.ref_name }}
@@ -84,7 +84,7 @@ jobs:
         id: build-docker-image
         run: |
           cd services/datalad
-          docker build --build-arg LERNA_JSON="$(cat ../../lerna.json)" -t ${{ github.repository }}/datalad-service:${{ github.ref_name }} .
+          docker build --build-arg LERNA_JSON="$(cat ../../lerna.json)" -t ghcr.io/${{ github.repository }}/datalad-service:${{ github.ref_name }} .
       - name: push the docker image
         id: push-docker-image
         run: docker push ghcr.io/${{ github.repository }}/datalad-service:${{ github.ref_name }}
