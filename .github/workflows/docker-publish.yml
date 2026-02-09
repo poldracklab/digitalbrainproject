@@ -22,11 +22,11 @@ jobs:
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t ghcr.io/${{ github.repository_name }}/node:latest .
-          docker build -t ghcr.io/${{ github.repository_name }}/server:${{ github.ref_name }} packages/openneuro-server
+          docker build -t ghcr.io/${{ github.repository }}/node:latest .
+          docker build -t ghcr.io/${{ github.repository }}/server:${{ github.ref_name }} packages/openneuro-server
       - name: push the docker image
         id: push-docker-image
-        run: docker push ghcr.io/${{ github.repository_name }}/server:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ github.repository }}/server:${{ github.ref_name }}
       - name: Log in to the GitHub Container Registry
   build_app:
     name: App
@@ -43,11 +43,11 @@ jobs:
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t ${{ github.repository_name }}/node:latest .
-          docker build -t ${{ github.repository_name }}/app:${{ github.ref_name }} packages/openneuro-app
+          docker build -t ${{ github.repository }}/node:latest .
+          docker build -t ${{ github.repository }}/app:${{ github.ref_name }} packages/openneuro-app
       - name: push the docker image
         id: push-docker-image
-        run: docker push ghcr.io/${{ github.repository_name }}/app:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ github.repository }}/app:${{ github.ref_name }}
   build_indexer:
     name: Indexer
     runs-on: ubuntu-latest
@@ -63,11 +63,11 @@ jobs:
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t ${{ github.repository_name }}/node:latest .
-          docker build -t ${{ github.repository_name }}/indexer:${{ github.ref_name }} packages/openneuro-indexer
+          docker build -t ${{ github.repository }}/node:latest .
+          docker build -t ${{ github.repository }}/indexer:${{ github.ref_name }} packages/openneuro-indexer
       - name: push the docker image
         id: push-docker-image
-        run: docker push ghcr.io/${{ github.repository_name }}/indexer:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ github.repository }}/indexer:${{ github.ref_name }}
   build_datalad_service:
     name: Datalad Service
     runs-on: ubuntu-latest
@@ -84,7 +84,7 @@ jobs:
         id: build-docker-image
         run: |
           cd services/datalad
-          docker build --build-arg LERNA_JSON="$(cat ../../lerna.json)" -t ${{ github.repository_name }}/datalad-service:${{ github.ref_name }} .
+          docker build --build-arg LERNA_JSON="$(cat ../../lerna.json)" -t ${{ github.repository }}/datalad-service:${{ github.ref_name }} .
       - name: push the docker image
         id: push-docker-image
-        run: docker push ghcr.io/${{ github.repository_name }}/datalad-service:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ github.repository }}/datalad-service:${{ github.ref_name }}

@@ -11,8 +11,8 @@ jobs:
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t ${{ github.repository_name }}/node:latest .
-          docker build -t ${{ github.repository_name }}/server:latest packages/openneuro-server
+          docker build -t ${{ github.repository }}/node:latest .
+          docker build -t ${{ github.repository }}/server:latest packages/openneuro-server
   build_app:
     name: App
     runs-on: ubuntu-latest
@@ -21,8 +21,8 @@ jobs:
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t ${{ github.repository_name }}/node:latest .
-          docker build -t ${{ github.repository_name }}/app:latest packages/openneuro-app
+          docker build -t ${{ github.repository }}/node:latest .
+          docker build -t ${{ github.repository }}/app:latest packages/openneuro-app
   build_indexer:
     name: Indexer
     runs-on: ubuntu-latest
@@ -31,8 +31,8 @@ jobs:
       - name: build the docker image
         id: build-docker-image
         run: |
-          docker build -t ${{ github.repository_name }}/node:latest .
-          docker build -t ${{ github.repository_name }}/indexer:latest packages/openneuro-indexer
+          docker build -t ${{ github.repository }}/node:latest .
+          docker build -t ${{ github.repository }}/indexer:latest packages/openneuro-indexer
   build_datalad_service:
     name: Datalad Service
     runs-on: ubuntu-latest
@@ -42,4 +42,4 @@ jobs:
         id: build-docker-image
         run: |
           cd services/datalad
-          docker build --build-arg LERNA_JSON="$(cat ../../lerna.json)" -t ${{ github.repository_name }}/datalad-service:latest .
+          docker build --build-arg LERNA_JSON="$(cat ../../lerna.json)" -t ${{ github.repository }}/datalad-service:latest .
