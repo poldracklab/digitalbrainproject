@@ -67,7 +67,7 @@ jobs:
           docker build -t ${{ github.repository_name }}/indexer:${{ github.ref_name }} packages/openneuro-indexer
       - name: push the docker image
         id: push-docker-image
-       run: docker push ghcr.io/${{ github.repository_name }}/indexer:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ github.repository_name }}/indexer:${{ github.ref_name }}
   build_datalad_service:
     name: Datalad Service
     runs-on: ubuntu-latest
