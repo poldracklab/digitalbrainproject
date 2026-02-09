@@ -1,4 +1,4 @@
-FROM openneuro/node AS build
+FROM rwblair/openneuro/node AS build
 
 # install server app
 WORKDIR /srv/packages/openneuro-server
