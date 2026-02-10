@@ -10,6 +10,7 @@ import verifyUser from "./libs/authentication/verifyUser"
 import * as google from "./libs/authentication/google"
 import * as orcid from "./libs/authentication/orcid"
 import * as githubAuth from "./libs/authentication/github"
+import * as stanford from "./libs/authentication/stanford"
 import * as jwt from "./libs/authentication/jwt"
 import * as auth from "./libs/authentication/states"
 import * as doi from "./handlers/doi"
@@ -172,6 +173,19 @@ const routes = [
     method: "get",
     url: "/auth/github/callback",
     handler: githubAuth.authCallback,
+  },
+
+  // stanford
+  {
+    method: "get",
+    url: "/auth/stanford",
+    middleware: [storeRedirect],
+    handler: stanford.requestAuth,
+  },
+  {
+    method: "get",
+    url: "/auth/stanford/callback",
+    handler: stanford.authCallback,
   },
 
   // Anonymous reviewer access

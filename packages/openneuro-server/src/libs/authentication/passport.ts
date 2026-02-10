@@ -3,6 +3,7 @@ import refresh from "passport-oauth2-refresh"
 import { Strategy as JwtStrategy } from "passport-jwt"
 import { Strategy as GoogleStrategy } from "passport-google-oauth20"
 import { Strategy as ORCIDStrategy } from "passport-orcid"
+import { Strategy as StanfordStrategy } from "passport-stanford"
 import config from "../../config"
 import User from "../../models/user"
 import { encrypt } from "./crypto"
@@ -14,6 +15,7 @@ export const PROVIDERS = {
   GOOGLE: "google",
   ORCID: "orcid",
   GITHUB: "github",
+  STANFORD: "stanford",
 }
 
 interface OauthProfile {
@@ -49,6 +51,13 @@ export const loadProfile = (profile): OauthProfile | Error => {
       refresh: undefined,
     }
   } else if (profile.provider === PROVIDERS.GITHUB) {
+    return {
+      email: profile.emails ? profile.emails[0].value : "",
+      name: profile.displayName || profile.username,
+      provider: profile.provider,
+      providerId: profile.id,
+    }
+  } else if (profile.provider === PROVIDERS.STANFORD) {
     return {
       email: profile.emails ? profile.emails[0].value : "",
       name: profile.displayName || profile.username,
@@ -180,5 +189,16 @@ export const setupPassportAuth = () => {
     )
     passport.use(PROVIDERS.ORCID, orcidStrategy)
   }
+  const stanfordStrategy = new StanfordStrategy(
+    {
+      idp:        'prod',
+      entityId:   config.url,
+      path:       `${config.url + config.apiPrefix}auth/stanford/callback`,
+      loginPath:  `${config.url + config.apiPrefix}auth/stanford/`,
+      passReqToCallback:  true,
+      passport:           passport,
+    }
+  )
+  passport.use(PROVIDERS.STANFORD, stanfordStrategy)
   setupGitHubAuth()
 }
