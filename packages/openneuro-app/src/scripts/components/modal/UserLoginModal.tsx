@@ -30,31 +30,14 @@ export const UserLoginModal = ({
         </div>
         <div className="sign-in-modal-content">
           <div>
-            <a href={loginUrls.orcid + `?redirectPath=${btoa(redirectPath)}`}>
+            <a href={loginUrls.stanford + `?redirectPath=${btoa(redirectPath)}`}>
               <Button
                 className="login-button"
                 primary
-                label="ORCID"
+                label="Stanford"
                 imgSrc={orcidIcon}
               />
             </a>
-            <AccordionWrap>
-              <AccordionTab
-                id="orcid-info-accordion"
-                label="What is this?"
-                accordionStyle="plain"
-                children={
-                  <>
-                    ORCID users are identified and connected to their
-                    contributions and affiliations, across disciplines, borders,
-                    and time.{" "}
-                    <a href="https://orcid.org/content/about-orcid">
-                      Learn more
-                    </a>
-                  </>
-                }
-              />
-            </AccordionWrap>
             <div>
               <a
                 href={loginUrls.google + `?redirectPath=${btoa(redirectPath)}`}

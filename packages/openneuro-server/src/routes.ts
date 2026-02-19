@@ -179,13 +179,14 @@ const routes = [
   {
     method: "get",
     url: "/auth/stanford",
-    middleware: [storeRedirect],
+    middleware: [noCache],
     handler: stanford.requestAuth,
   },
   {
     method: "get",
     url: "/auth/stanford/callback",
-    handler: stanford.authCallback,
+    middleware: [noCache, stanford.authCallback],
+    handler: jwt.authSuccessHandler,
   },
 
   // Anonymous reviewer access

@@ -4129,6 +4129,7 @@ const RAW_RUNTIME_STATE =
           ["passport-jwt", "npm:4.0.1"],\
           ["passport-oauth2-refresh", "npm:2.2.0"],\
           ["passport-orcid", "npm:0.0.4"],\
+          ["passport-stanford", "npm:1.1.1"],\
           ["react", "npm:18.2.0"],\
           ["react-dom", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:18.2.0"],\
           ["redis-smq", "virtual:6d9c0fee0b376eb0bb6824eb7a3246834ef21d870b31f75eebe59bb4d027e50f2607ba168fd29d446567f4e9c2a5cad2442c4741fa92c92e0b7e9145c3a3e3a7#npm:8.3.1"],\
@@ -8156,6 +8157,14 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["async", [\
+      ["npm:2.6.4", {\
+        "packageLocation": "./.yarn/cache/async-npm-2.6.4-3155e80151-df8e52817d.zip/node_modules/async/",\
+        "packageDependencies": [\
+          ["async", "npm:2.6.4"],\
+          ["lodash", "npm:4.17.23"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:3.2.6", {\
         "packageLocation": "./.yarn/cache/async-npm-3.2.6-aa4f5aa081-cb6e0561a3.zip/node_modules/async/",\
         "packageDependencies": [\
@@ -10936,6 +10945,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["ejs", [\
+      ["npm:2.7.4", {\
+        "packageLocation": "./.yarn/unplugged/ejs-npm-2.7.4-879ed38a4e/node_modules/ejs/",\
+        "packageDependencies": [\
+          ["ejs", "npm:2.7.4"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:3.1.10", {\
         "packageLocation": "./.yarn/cache/ejs-npm-3.1.10-4e8cf4bdc1-a9cb7d7cd1.zip/node_modules/ejs/",\
         "packageDependencies": [\
@@ -15741,6 +15757,13 @@ const RAW_RUNTIME_STATE =
           ["lodash", "npm:4.17.21"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:4.17.23", {\
+        "packageLocation": "./.yarn/cache/lodash-npm-4.17.23-50bdb1c01a-82504c8825.zip/node_modules/lodash/",\
+        "packageDependencies": [\
+          ["lodash", "npm:4.17.23"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["lodash.defaults", [\
@@ -17675,6 +17698,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["node-forge", [\
+      ["npm:0.7.6", {\
+        "packageLocation": "./.yarn/cache/node-forge-npm-0.7.6-068559b05b-281507a6b5.zip/node_modules/node-forge/",\
+        "packageDependencies": [\
+          ["node-forge", "npm:0.7.6"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["node-gyp", [\
       ["npm:11.5.0", {\
         "packageLocation": "./.yarn/unplugged/node-gyp-npm-11.5.0-6cfe9d790c/node_modules/node-gyp/",\
@@ -18940,6 +18972,32 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["passport-saml", [\
+      ["npm:0.33.0", {\
+        "packageLocation": "./.yarn/cache/passport-saml-npm-0.33.0-b05810e011-fbfeb33b25.zip/node_modules/passport-saml/",\
+        "packageDependencies": [\
+          ["passport-saml", "npm:0.33.0"],\
+          ["passport-strategy", "npm:1.0.0"],\
+          ["q", "npm:1.5.1"],\
+          ["xml-crypto", "npm:0.10.1"],\
+          ["xml-encryption", "npm:0.11.2"],\
+          ["xml2js", "npm:0.4.23"],\
+          ["xmlbuilder", "npm:9.0.7"],\
+          ["xmldom", "npm:0.1.31"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["passport-stanford", [\
+      ["npm:1.1.1", {\
+        "packageLocation": "./.yarn/cache/passport-stanford-npm-1.1.1-1058d8b39d-b6d19004bb.zip/node_modules/passport-stanford/",\
+        "packageDependencies": [\
+          ["passport-saml", "npm:0.33.0"],\
+          ["passport-stanford", "npm:1.1.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["passport-strategy", [\
       ["npm:1.0.0", {\
         "packageLocation": "./.yarn/cache/passport-strategy-npm-1.0.0-5648a82a66-5086693f25.zip/node_modules/passport-strategy/",\
@@ -19830,6 +19888,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/punycode-npm-2.3.1-97543c420d-febdc4362b.zip/node_modules/punycode/",\
         "packageDependencies": [\
           ["punycode", "npm:2.3.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["q", [\
+      ["npm:1.5.1", {\
+        "packageLocation": "./.yarn/cache/q-npm-1.5.1-a28b3cfeaf-70c4a30b30.zip/node_modules/q/",\
+        "packageDependencies": [\
+          ["q", "npm:1.5.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -21415,6 +21482,15 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["buffer", "npm:6.0.3"],\
           ["sax", "npm:1.2.4"],\
+          ["stream-browserify", "npm:3.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:1.4.4", {\
+        "packageLocation": "./.yarn/cache/sax-npm-1.4.4-0d170e0f2d-00ff7b258b.zip/node_modules/sax/",\
+        "packageDependencies": [\
+          ["buffer", "npm:6.0.3"],\
+          ["sax", "npm:1.4.4"],\
           ["stream-browserify", "npm:3.0.0"]\
         ],\
         "linkType": "HARD"\
@@ -25119,6 +25195,31 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["xml-crypto", [\
+      ["npm:0.10.1", {\
+        "packageLocation": "./.yarn/cache/xml-crypto-npm-0.10.1-02567c135a-2cbd06d486.zip/node_modules/xml-crypto/",\
+        "packageDependencies": [\
+          ["xml-crypto", "npm:0.10.1"],\
+          ["xmldom", "npm:0.1.19"],\
+          ["xpath.js", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["xml-encryption", [\
+      ["npm:0.11.2", {\
+        "packageLocation": "./.yarn/cache/xml-encryption-npm-0.11.2-278ba0e930-d7a4791529.zip/node_modules/xml-encryption/",\
+        "packageDependencies": [\
+          ["async", "npm:2.6.4"],\
+          ["ejs", "npm:2.7.4"],\
+          ["node-forge", "npm:0.7.6"],\
+          ["xml-encryption", "npm:0.11.2"],\
+          ["xmldom", "npm:0.1.31"],\
+          ["xpath", "npm:0.0.27"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["xml-name-validator", [\
       ["npm:5.0.0", {\
         "packageLocation": "./.yarn/cache/xml-name-validator-npm-5.0.0-0e0ec66944-43f30f3f67.zip/node_modules/xml-name-validator/",\
@@ -25128,11 +25229,36 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["xml2js", [\
+      ["npm:0.4.23", {\
+        "packageLocation": "./.yarn/cache/xml2js-npm-0.4.23-93a8b2e10b-52896ef394.zip/node_modules/xml2js/",\
+        "packageDependencies": [\
+          ["sax", "npm:1.4.4"],\
+          ["xml2js", "npm:0.4.23"],\
+          ["xmlbuilder", "npm:11.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["xmlbuilder", [\
       ["npm:10.1.1", {\
         "packageLocation": "./.yarn/cache/xmlbuilder-npm-10.1.1-6d5c6c3a97-f6fdfe87d2.zip/node_modules/xmlbuilder/",\
         "packageDependencies": [\
           ["xmlbuilder", "npm:10.1.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:11.0.1", {\
+        "packageLocation": "./.yarn/cache/xmlbuilder-npm-11.0.1-b8b04dc929-c8c3d20878.zip/node_modules/xmlbuilder/",\
+        "packageDependencies": [\
+          ["xmlbuilder", "npm:11.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:9.0.7", {\
+        "packageLocation": "./.yarn/cache/xmlbuilder-npm-9.0.7-44519dbccb-63d0c59608.zip/node_modules/xmlbuilder/",\
+        "packageDependencies": [\
+          ["xmlbuilder", "npm:9.0.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -25152,6 +25278,40 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["sax", "npm:1.2.4"],\
           ["xmldoc", "npm:1.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["xmldom", [\
+      ["npm:0.1.19", {\
+        "packageLocation": "./.yarn/cache/xmldom-npm-0.1.19-14ca771219-8a0c8f536c.zip/node_modules/xmldom/",\
+        "packageDependencies": [\
+          ["xmldom", "npm:0.1.19"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.1.31", {\
+        "packageLocation": "./.yarn/cache/xmldom-npm-0.1.31-86b5d5022f-eddc09391c.zip/node_modules/xmldom/",\
+        "packageDependencies": [\
+          ["xmldom", "npm:0.1.31"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["xpath", [\
+      ["npm:0.0.27", {\
+        "packageLocation": "./.yarn/cache/xpath-npm-0.0.27-5620d03aa4-e4648276cc.zip/node_modules/xpath/",\
+        "packageDependencies": [\
+          ["xpath", "npm:0.0.27"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["xpath.js", [\
+      ["npm:1.1.0", {\
+        "packageLocation": "./.yarn/cache/xpath.js-npm-1.1.0-21de325652-4bfa243bea.zip/node_modules/xpath.js/",\
+        "packageDependencies": [\
+          ["xpath.js", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\

@@ -1,3 +1,4 @@
 openneuro/charts
 values.yaml
 secrets*.yaml
+dbp/charts

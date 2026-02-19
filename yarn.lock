@@ -3162,6 +3162,7 @@ __metadata:
     passport-jwt: "npm:4.0.1"
     passport-oauth2-refresh: "npm:2.2.0"
     passport-orcid: "npm:0.0.4"
+    passport-stanford: "npm:1.1.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     redis-smq: "npm:^8.3.1"
@@ -6288,6 +6289,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"async@npm:^2.1.5":
+  version: 2.6.4
+  resolution: "async@npm:2.6.4"
+  dependencies:
+    lodash: "npm:^4.17.14"
+  checksum: 10/df8e52817d74677ab50c438d618633b9450aff26deb274da6dfedb8014130909482acdc7753bce9b72e6171ce9a9f6a92566c4ced34c3cb3714d57421d58ad27
+  languageName: node
+  linkType: hard
+
 "async@npm:^3.2.6":
   version: 3.2.6
   resolution: "async@npm:3.2.6"
@@ -8573,6 +8583,13 @@ __metadata:
   version: 1.1.1
   resolution: "ee-first@npm:1.1.1"
   checksum: 10/1b4cac778d64ce3b582a7e26b218afe07e207a0f9bfe13cc7395a6d307849cfe361e65033c3251e00c27dd060cab43014c2d6b2647676135e18b77d2d05b3f4f
+  languageName: node
+  linkType: hard
+
+"ejs@npm:^2.5.6":
+  version: 2.7.4
+  resolution: "ejs@npm:2.7.4"
+  checksum: 10/39f5753d18cfc84c7351341f8d8df0f4abd07fd64be79dea6b32e54686de0e428ad35802893ba9cb7b199baaf3db310d304ef7bcaade5a6a4404d5a855a806fb
   languageName: node
   linkType: hard
 
@@ -12984,6 +13001,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash@npm:^4.17.14":
+  version: 4.17.23
+  resolution: "lodash@npm:4.17.23"
+  checksum: 10/82504c88250f58da7a5a4289f57a4f759c44946c005dd232821c7688b5fcfbf4a6268f6a6cdde4b792c91edd2f3b5398c1d2a0998274432cff76def48735e233
+  languageName: node
+  linkType: hard
+
 "log-symbols@npm:^4.0.0":
   version: 4.1.0
   resolution: "log-symbols@npm:4.1.0"
@@ -14717,6 +14741,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-forge@npm:^0.7.0":
+  version: 0.7.6
+  resolution: "node-forge@npm:0.7.6"
+  checksum: 10/281507a6b5ae38bb784d7675787e82f41048a691c7de7dc1334f003043404f86e716c9ce9dbe15b5bfdf3d0bb63d61471a0f65e37d8c78c46e0090d554abe4b2
+  languageName: node
+  linkType: hard
+
 "node-gyp@npm:^11.0.0":
   version: 11.5.0
   resolution: "node-gyp@npm:11.5.0"
@@ -15925,7 +15956,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"passport-strategy@npm:1.x.x, passport-strategy@npm:^1.0.0":
+"passport-saml@npm:^0.33.0":
+  version: 0.33.0
+  resolution: "passport-saml@npm:0.33.0"
+  dependencies:
+    passport-strategy: "npm:*"
+    q: "npm:^1.5.0"
+    xml-crypto: "npm:^0.10.1"
+    xml-encryption: "npm:^0.11.0"
+    xml2js: "npm:0.4.x"
+    xmlbuilder: "npm:^9.0.4"
+    xmldom: "npm:0.1.x"
+  checksum: 10/fbfeb33b25dcfd55b9425bfa7c5c4293bb54edf6934f46569a5295ce913932e7bc041406dd3c407ab7aab1f84b909f0c2ddfdb051ffe4aa543f961ab8cab4eea
+  languageName: node
+  linkType: hard
+
+"passport-stanford@npm:1.1.1":
+  version: 1.1.1
+  resolution: "passport-stanford@npm:1.1.1"
+  dependencies:
+    passport-saml: "npm:^0.33.0"
+  checksum: 10/b6d19004bbf560859c3d154b91b2d4aa3814f6676c0c1df1357fa7c2d0f65717f22382b007fd692ce9c9ad2c1158ce2f820c9f76cae9bc77b3ab5e6a57eac648
+  languageName: node
+  linkType: hard
+
+"passport-strategy@npm:*, passport-strategy@npm:1.x.x, passport-strategy@npm:^1.0.0":
   version: 1.0.0
   resolution: "passport-strategy@npm:1.0.0"
   checksum: 10/5086693f2508e538dffa55a338c89fe8192fb5f4478c71f80cd5890b8573419a098f4fec88b505374f60bbe9049f6f24b9f3992678612528a3370b4dc73354a2
@@ -16719,6 +16774,13 @@ __metadata:
   version: 2.3.1
   resolution: "punycode@npm:2.3.1"
   checksum: 10/febdc4362bead22f9e2608ff0171713230b57aff9dddc1c273aa2a651fbd366f94b7d6a71d78342a7c0819906750351ca7f2edd26ea41b626d87d6a13d1bd059
+  languageName: node
+  linkType: hard
+
+"q@npm:^1.5.0":
+  version: 1.5.1
+  resolution: "q@npm:1.5.1"
+  checksum: 10/70c4a30b300277165cd855889cd3aa681929840a5940413297645c5691e00a3549a2a4153131efdf43fe8277ee8cf5a34c9636dcb649d83ad47f311a015fd380
   languageName: node
   linkType: hard
 
@@ -17999,6 +18061,13 @@ __metadata:
   bin:
     sass: sass.js
   checksum: 10/2fc0dcafdf3050f4131650a00ddd772790af1dc3e31a97c6533f323efabddce81bd139a920f13a88af80d630a255f51ee91067a7478364b2a13fcc6f5f7e8308
+  languageName: node
+  linkType: hard
+
+"sax@npm:>=0.6.0":
+  version: 1.4.4
+  resolution: "sax@npm:1.4.4"
+  checksum: 10/00ff7b258baa37d98f8abfa0b5c8b3ee739ca37e9b6ecb83405be9e6e5b0b2856394a5eff142db1d987d589b54b139d4236f25830c1e17a2b640efa53c8fda72
   languageName: node
   linkType: hard
 
@@ -21044,6 +21113,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"xml-crypto@npm:^0.10.1":
+  version: 0.10.1
+  resolution: "xml-crypto@npm:0.10.1"
+  dependencies:
+    xmldom: "npm:=0.1.19"
+    xpath.js: "npm:>=0.0.3"
+  checksum: 10/2cbd06d4864d058cdeaad14c2e32c8e85cfb4dbd1a6e6f68101976f1e11b1f38cdfc4e53eda49045e39f7bac2276afd302913473dcc3ff3d4b9c5dd680b83710
+  languageName: node
+  linkType: hard
+
+"xml-encryption@npm:^0.11.0":
+  version: 0.11.2
+  resolution: "xml-encryption@npm:0.11.2"
+  dependencies:
+    async: "npm:^2.1.5"
+    ejs: "npm:^2.5.6"
+    node-forge: "npm:^0.7.0"
+    xmldom: "npm:~0.1.15"
+    xpath: "npm:0.0.27"
+  checksum: 10/d7a47915298e4c56654736ed053f36beec960175c05a8ef57db6fc3a090d2e62227229ed432cf30d8f3f0ffa85c153a4ddcb845e380f6e35557b3ceb0431cf63
+  languageName: node
+  linkType: hard
+
 "xml-name-validator@npm:^5.0.0":
   version: 5.0.0
   resolution: "xml-name-validator@npm:5.0.0"
@@ -21051,10 +21143,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"xml2js@npm:0.4.x":
+  version: 0.4.23
+  resolution: "xml2js@npm:0.4.23"
+  dependencies:
+    sax: "npm:>=0.6.0"
+    xmlbuilder: "npm:~11.0.0"
+  checksum: 10/52896ef39429f860f32471dd7bb2b89ef25b7e15528e3a4366de0bd5e55a251601565e7814763e70f9e75310c3afe649a42b8826442b74b41eff8a0ae333fccc
+  languageName: node
+  linkType: hard
+
 "xmlbuilder@npm:^10.0.0":
   version: 10.1.1
   resolution: "xmlbuilder@npm:10.1.1"
   checksum: 10/f6fdfe87d221a7388718fa339e0d12323c0f62d6f9422df1d6af31bb1166ea40fb0b15a9c9e9b495e0c62da6c75ae7bbd26d171041fa6064e2d1840e0445c55f
+  languageName: node
+  linkType: hard
+
+"xmlbuilder@npm:^9.0.4":
+  version: 9.0.7
+  resolution: "xmlbuilder@npm:9.0.7"
+  checksum: 10/63d0c596080f85a12f0cd184751d8ab1e9d022f519032d167f85dfdc5af708e6a1e6bcd22609b8718f091e72c75743b6c8d03bc08879a2829de5e07a3c26e157
+  languageName: node
+  linkType: hard
+
+"xmlbuilder@npm:~11.0.0":
+  version: 11.0.1
+  resolution: "xmlbuilder@npm:11.0.1"
+  checksum: 10/c8c3d208783718db5b285101a736cd8e6b69a5c265199a0739abaa93d1a1b7de5489fd16df4e776e18b2c98cb91f421a7349e99fd8c1ebeb44ecfed72a25091a
   languageName: node
   linkType: hard
 
@@ -21071,6 +21187,34 @@ __metadata:
   dependencies:
     sax: "npm:^1.2.1"
   checksum: 10/b3f13582cb00cb2149b2dca6e6cb6ec7de9c78b783294850ee3fc61f76b7b59c4c5213bc88e1a8708bdd52c90c0e25f999b51eaae3ab2b6aa462d8c7ecffb2d8
+  languageName: node
+  linkType: hard
+
+"xmldom@npm:0.1.x, xmldom@npm:~0.1.15":
+  version: 0.1.31
+  resolution: "xmldom@npm:0.1.31"
+  checksum: 10/eddc09391c928be61c504a355d5b7c42cbec526e94cc1e2d092d006ed5bc1525b869fb922cbcf3f6f7aac946a6b25ec4243dc2630afb5cbec61b723829211792
+  languageName: node
+  linkType: hard
+
+"xmldom@npm:=0.1.19":
+  version: 0.1.19
+  resolution: "xmldom@npm:0.1.19"
+  checksum: 10/8a0c8f536c21ba4b0fd2a4ac33189838d913778bdbc7734e4ee686d276e0dd62aa82e13ccf601214e9f560daeb2fa1ca6e79d367bb3561de998d6badf60bdaa5
+  languageName: node
+  linkType: hard
+
+"xpath.js@npm:>=0.0.3":
+  version: 1.1.0
+  resolution: "xpath.js@npm:1.1.0"
+  checksum: 10/4bfa243bea65dc5443de926a8b8e9d513b44b719ab62519330b42577bfb228a2a3a4e59aaf61be7e14572fefac20bbeb4c1abf6a225aca32b63ac950a83b19fd
+  languageName: node
+  linkType: hard
+
+"xpath@npm:0.0.27":
+  version: 0.0.27
+  resolution: "xpath@npm:0.0.27"
+  checksum: 10/e4648276cc3dba7e368c4b6604baf5130600988b4b371c6d1bc4b01e893dc1a8c4521193478ea43bb3588a7c028f082ce5cb7204415c7636730a710d6e04a826
   languageName: node
   linkType: hard
 
