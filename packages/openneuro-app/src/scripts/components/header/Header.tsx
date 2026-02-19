@@ -43,12 +43,14 @@ export const Header = ({
             ? "navbar-inner-wrap nav-open"
             : "navbar-inner-wrap nav-closed"}
         >
+          {/*
           <div className="navbar-brand">
             <NavLink to="/">
               <Logo horizontal dark={false} />
             </NavLink>
             <h1 className="sr-only">OpenNeuro</h1>
           </div>
+          */}
           <div className="navbar-navigation">
             <span
               className="mobile-collapse-toggle"
@@ -128,7 +130,7 @@ export const Header = ({
         toggle={toggleSupport}
         closeText="Close"
       >
-        <h3>OpenNeuro Support</h3>
+        <h3>Support</h3>
         <p>
           Please email issues or questions to
           <br />

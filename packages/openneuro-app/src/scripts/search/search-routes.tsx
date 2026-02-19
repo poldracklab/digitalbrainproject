@@ -3,7 +3,6 @@ import type { FC } from "react"
 import { Route, Routes } from "react-router-dom"
 import SearchContainer from "./search-container"
 import { portalContent } from "../common/content/portal-content"
-import { portalGrantContent } from "../common/content/portal-grant-content"
 
 const SearchRoutes: FC = () => (
   <Routes>
@@ -31,10 +30,6 @@ const SearchRoutes: FC = () => (
     <Route
       path="/modality/nirs"
       element={<SearchContainer portalContent={portalContent.nirs} />}
-    />
-    <Route
-      path="/nih"
-      element={<SearchContainer portalContent={portalGrantContent.nih} />}
     />
   </Routes>
 )

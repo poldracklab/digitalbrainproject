@@ -51,7 +51,7 @@ export const LandingExpandedHeader: React.FC<LandingExpandedHeaderProps> = ({
   const isLoggedIn = loginCheck(cookies)
 
   return (
-    <div className="expaned-header" style={{ minHeight: "720px" }}>
+    <div className="expaned-header">
       <div className="container">
         <div className="grid grid-between header-wrap">
           <div className="col expaned-h-left">
@@ -80,6 +80,7 @@ export const LandingExpandedHeader: React.FC<LandingExpandedHeaderProps> = ({
                   <div className=" hero-sigin-label">
                     <h3>SIGN IN</h3>
                   </div>
+                  {/*
                   <div>
                     <a href={loginUrls.orcid}>
                       <Button
@@ -90,6 +91,7 @@ export const LandingExpandedHeader: React.FC<LandingExpandedHeaderProps> = ({
                       />
                     </a>
                   </div>
+                  */}
                   <div>
                     <a href={loginUrls.google}>
                       <Button
@@ -104,7 +106,7 @@ export const LandingExpandedHeader: React.FC<LandingExpandedHeaderProps> = ({
               )
               : null}
           </div>
-          {hexGrid}
+          {/* hexGrid */}
         </div>
       </div>
     </div>

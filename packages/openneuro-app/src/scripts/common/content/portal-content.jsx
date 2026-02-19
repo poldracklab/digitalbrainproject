@@ -9,20 +9,10 @@ import nirs from "./assets/modality-cubes/nirs.jpg"
 
 export const portalContent = {
   mri: {
-    modality: "mri", // corresponds to values in `modality_available` in (packages/openneuro-app/src/scripts/refactor_2021/search/initial-search-params.tsx)
+    modality: "mri",
     className: "search-page-mri",
-    portalName: "OpenNeuro MRI",
-    portalPrimary: (
-      <>
-        The OpenNeuro platform was developed by the{" "}
-        <a href="https://reproducibility.stanford.edu/">
-          Stanford Center for Reproducible Neuroscience
-        </a>{" "}
-        as a tool to encourage and enhance data sharing and analysis of raw MRI
-        data, using <a href="https://bids.neuroimaging.io">BIDS</a>{" "}
-        to organize and standardize these data.
-      </>
-    ),
+    portalName: "MRI",
+    portalPrimary: "",
     publicDatasetStat: 100,
     participantsStat: 1100,
     hexBackgroundImage: mri,
@@ -33,18 +23,10 @@ export const portalContent = {
     communitySecondary: null,
   },
   eeg: {
-    modality: "eeg", // corresponds to values in `modality_available` in (packages/openneuro-app/src/scripts/refactor_2021/search/initial-search-params.tsx)
+    modality: "eeg",
     className: "search-page-eeg",
-    portalName: "OpenNeuro EEG",
-    portalPrimary: (
-      <>
-        OpenNeuro added support for EEG datasets in 2019 when{" "}
-        <a href="https://www.nature.com/articles/s41597-019-0104-8">
-          EEG was incorporated
-        </a>{" "}
-        into the <a href="https://bids.neuroimaging.io">BIDS</a> standard.
-      </>
-    ),
+    portalName: "EEG",
+    portalPrimary: "",
     publicDatasetStat: 100,
     participantsStat: 1100,
     hexBackgroundImage: eeg,
@@ -55,18 +37,10 @@ export const portalContent = {
     communitySecondary: null,
   },
   ieeg: {
-    modality: "ieeg", // corresponds to values in `modality_available` in (packages/openneuro-app/src/scripts/refactor_2021/search/initial-search-params.tsx)
+    modality: "ieeg",
     className: "search-page-ieeg",
-    portalName: "OpenNeuro iEEG",
-    portalPrimary: (
-      <>
-        OpenNeuro added support for iEEG datasets in 2019 when{" "}
-        <a href="https://www.nature.com/articles/s41597-019-0105-7">
-          iEEG was incorporated
-        </a>{" "}
-        into the <a href="https://bids.neuroimaging.io">BIDS</a> standard.
-      </>
-    ),
+    portalName: "iEEG",
+    portalPrimary: "",
     publicDatasetStat: 100,
     participantsStat: 1100,
     hexBackgroundImage: ieeg,
@@ -77,18 +51,10 @@ export const portalContent = {
     communitySecondary: null,
   },
   meg: {
-    modality: "meg", // corresponds to values in `modality_available` in (packages/openneuro-app/src/scripts/refactor_2021/search/initial-search-params.tsx)
+    modality: "meg",
     className: "search-page-meg",
-    portalName: "OpenNeuro MEG",
-    portalPrimary: (
-      <>
-        OpenNeuro added support for MEG datasets in 2018 when{" "}
-        <a href="https://www.nature.com/articles/sdata2018110">
-          MEG was incorporated
-        </a>{" "}
-        into the <a href="https://bids.neuroimaging.io">BIDS</a> standard.
-      </>
-    ),
+    portalName: "MEG",
+    portalPrimary: "",
     publicDatasetStat: 100,
     participantsStat: 1100,
     hexBackgroundImage: meg,
@@ -99,22 +65,10 @@ export const portalContent = {
     communitySecondary: null,
   },
   pet: {
-    modality: "pet", // corresponds to values in `modality_available` in (packages/openneuro-app/src/scripts/refactor_2021/search/initial-search-params.tsx)
+    modality: "pet",
     className: "search-page-pet",
-    portalName: "OpenNeuro PET",
-    portalPrimary: (
-      <>
-        The PET portal of OpenNeuro is supported by a collaboration between
-        Stanford University, NIH, MGH and the Neurobiology Research Unit (NRU)
-        at Copenhagen University Hospital through the{" "}
-        <a href="https://openneuropet.github.io/">OpenNeuroPET project</a>. The
-        project is funded through the BRAIN Initiative and the Novo Nordisk
-        Foundation. Besides developing data sharing, the OpenNeuroPET project
-        also aims at developing user friendly tools for the BIDS based data
-        curation of PET data as well as tools for automated QC and template
-        building.
-      </>
-    ),
+    portalName: "PET",
+    portalPrimary: "",
     publicDatasetStat: 100,
     participantsStat: 1100,
     hexBackgroundImage: pet,
@@ -125,18 +79,10 @@ export const portalContent = {
     communitySecondary: null,
   },
   nirs: {
-    modality: "nirs", // corresponds to values in `modality_available` in (packages/openneuro-app/src/scripts/refactor_2021/search/initial-search-params.tsx)
+    modality: "nirs",
     className: "search-page-nirs",
-    portalName: "OpenNeuro NIRS",
-    portalPrimary: (
-      <>
-        OpenNeuro added support for NIRS datasets in 2022 when{" "}
-        <a href="https://www.nature.com/articles/s41597-024-04136-9">
-          NIRS was incorporated
-        </a>{" "}
-        into the <a href="https://bids.neuroimaging.io">BIDS</a> standard.
-      </>
-    ),
+    portalName: "NIRS",
+    portalPrimary: "",
     publicDatasetStat: 100,
     participantsStat: 1100,
     hexBackgroundImage: nirs,

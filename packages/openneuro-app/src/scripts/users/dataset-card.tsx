@@ -110,7 +110,7 @@ export const DatasetCard: React.FC<DatasetCardProps> = (
             Added: <b>{dateAdded}</b> ({dateAddedDifference} ago)
           </span>
           <span>
-            OpenNeuro Accession Number: <b>{dataset.id}</b>
+            Accession Number: <b>{dataset.id}</b>
           </span>
           <span>
             Dataset Size: <b>{datasetSize}</b>

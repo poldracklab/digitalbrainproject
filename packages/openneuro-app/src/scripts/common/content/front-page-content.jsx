@@ -18,7 +18,7 @@ import shareImage from "./assets/front-page/cube-share.png"
 import useImage from "./assets/front-page/cube-use.png"
 
 export const frontPage = {
-  pageTitle: "OpenNeuro",
+  pageTitle: "Digital Brain Project",
   copyright: {
     holder: "Stanford Center for Reproducible Neuroscience",
   },
@@ -61,9 +61,9 @@ export const frontPage = {
   },
   navBar: {
     brand: {
-      src: brand_mark,
-      alt: "OpenNeuro Logo",
-      title: "OpenNeuro Link to Home Page",
+      // src: brand_mark,
+      alt: "Logo",
+      title: "Link to Home Page",
       text: {
         first: "Open",
         second: "Neuro",
@@ -131,6 +131,7 @@ export const frontPage = {
     },
   ],
   support: [
+    /*
     {
       title: "NIH Brain Initiative",
       alt: "NIH Brain Initiative logo",
@@ -143,12 +144,14 @@ export const frontPage = {
       logo: nsf,
       link: "https://www.nsf.gov/",
     },
+    */
     {
       title: "Stanford",
       alt: "Stanford",
       logo: stanford,
       link: "https://www.stanford.edu",
     },
+    /*
     {
       title: "Arnold Foundation",
       alt: "Arnold Foundation",
@@ -173,5 +176,6 @@ export const frontPage = {
       logo: nru,
       link: "https://nru.dk/",
     },
+    */
   ],
 }
