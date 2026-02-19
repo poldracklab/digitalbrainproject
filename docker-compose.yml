@@ -204,6 +204,10 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.18.2
     platform: ${ES_PLATFORM}
+    deploy:
+      resources:
+        limits:
+          memory: 8192M
     environment:
       discovery.type: single-node
       cluster.routing.allocation.disk.threshold_enabled: "true"

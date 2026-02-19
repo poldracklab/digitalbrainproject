@@ -34,6 +34,12 @@ const config = {
     jwt: {
       secret: process.env.JWT_SECRET,
     },
+    stanford: {
+      private: process.env.STANFORD_PRIVATE,
+      public: process.env.STANFORD_PUBLIC,
+      clientID: process.env.STANFORD_CLIENT_ID,
+      clientSecret: process.env.STANFORD_CLIENT_SECRET,
+    }
   },
   mongo: {
     url: process.env.MONGO_URL,
