@@ -29,7 +29,7 @@ const App: FC<AppProps> = ({
         <MediaContextProvider>
           <Helmet>
             <title>{frontPage.pageTitle}</title>
-            <meta name="description" content={frontPage.pageDescription} />
+            <meta name="description" content={frontPage.pageDescriptionMeta} />
           </Helmet>
           {children}
           <Agreement />

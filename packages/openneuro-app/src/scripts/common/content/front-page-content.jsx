@@ -32,6 +32,7 @@ export const frontPage = {
       <Link to="/search/modality/ieeg">iEEG</Link> data
     </h2>
   ),
+  pageDescriptionMeta: "A free and open platform for sharing MRI, MEG, EEG, iEEG, ECoG, ASL, and PET data",
   titlePanel: {
     logos: [
       {

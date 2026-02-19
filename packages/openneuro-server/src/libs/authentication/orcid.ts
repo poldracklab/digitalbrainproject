@@ -3,6 +3,7 @@ import { parsedJwtFromRequest } from "./jwt"
 import * as Sentry from "@sentry/node"
 import { userMigration } from "./user-migration"
 import User from "../../models/user"
+import type { NextFunction, Request, Response } from "express"
 
 export const requestAuth = (req, res, next) =>
   passport.authenticate("orcid", {

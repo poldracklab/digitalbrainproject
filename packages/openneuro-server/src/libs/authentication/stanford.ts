@@ -2,7 +2,7 @@ import passport from "passport"
 import config from "../../config"
 import User from "../../models/user"
 import * as Sentry from "@sentry/node"
-import { addJWT, jwtFromRequest } from "./jwt"
+import { parsedJwtFromRequest } from "./jwt"
 import type { NextFunction, Request, Response } from "express"
 
 export const requestAuth = (
