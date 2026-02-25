@@ -39,8 +39,6 @@ export const authCallback = (
   res: Response,
   next: NextFunction,
 ) => {
-  console.log(JSON.stringify(req))
-  console.log(JSON.stringify(res))
   return passport.authenticate(
     "stanford",
     async (err, user, _info) => {
