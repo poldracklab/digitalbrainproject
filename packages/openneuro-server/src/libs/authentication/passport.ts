@@ -189,11 +189,17 @@ export const setupPassportAuth = () => {
     )
     passport.use(PROVIDERS.ORCID, orcidStrategy)
   }
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+  console.log(config.url)
+  console.log(config.apiPrefix)
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+  console.log(config.url)
   const stanfordStrategy = new StanfordStrategy(
     {
       idp:        'prod',
       entityId:   config.url,
       path:       `${config.url + config.apiPrefix}auth/stanford/callback`,
+      callbackUrl:       `${config.url + config.apiPrefix}auth/stanford/callback`,
       loginPath:  `${config.url + config.apiPrefix}auth/stanford/`,
       passReqToCallback:  true,
       passport:           passport,
