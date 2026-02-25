@@ -74,7 +74,7 @@ spec:
         resources:
           requests:
             cpu: {{ .Values.workerCpuRequests }}
-            memory: 1Gi
+            memory: 4Gi
         envFrom:
         - configMapRef:
             name: {{ .Release.Name }}-configmap

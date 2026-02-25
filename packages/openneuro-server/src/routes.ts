@@ -183,6 +183,12 @@ const routes = [
     handler: stanford.requestAuth,
   },
   {
+    method: "post",
+    url: "/auth/stanford/callback",
+    middleware: [noCache, stanford.authCallback],
+    handler: jwt.authSuccessHandler,
+  },
+  {
     method: "get",
     url: "/auth/stanford/callback",
     middleware: [noCache, stanford.authCallback],
