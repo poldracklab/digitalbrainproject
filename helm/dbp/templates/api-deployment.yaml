@@ -25,15 +25,15 @@ spec:
         projected:
           sources:
           - secret:
-              secretName: {{ .Release.Name }}-saml-pvk
+              name: {{ .Release.Name }}-saml-pvk
               items:
-              - key: saml-pvk
+              - key: private.key
                 path: saml-pvk
                 mode: 0400
           - secret:
-              secretName: {{ .Release.Name }}-saml-pub
+              name: {{ .Release.Name }}-saml-pub
               items:
-              - key: saml-pub
+              - key: public.crt
                 path: saml-pub
                 mode: 0400
       containers:

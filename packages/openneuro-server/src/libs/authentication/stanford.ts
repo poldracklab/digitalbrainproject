@@ -17,7 +17,7 @@ export const requestAuth = (
  * Complete a successful login
  */
 export function completeRequestLogin(req, res, next, user) {
-  return req.logIn(user, { session: false }, (err) => {
+  return req.logIn(user, { session: true }, (err) => {
     if (err) {
       Sentry.captureException(err)
       return next(err)
