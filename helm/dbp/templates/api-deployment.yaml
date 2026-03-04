@@ -20,6 +20,22 @@ spec:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
         checksum/secret: {{ include (print $.Template.BasePath "/secret.yaml") . | sha256sum }}
     spec:
+      volumes:
+      - name: saml-keys
+        projected:
+          sources:
+          - secret:
+              secretName: {{ .Release.Name }}-saml-pvk
+              items:
+              - key: saml-pvk
+                path: saml-pvk
+                mode: 0400
+          - secret:
+              secretName: {{ .Release.Name }}-saml-pub
+              items:
+              - key: saml-pub
+                path: saml-pub
+                mode: 0400
       containers:
         - name: {{ .Release.Name }}-api
           image: '{{ .Values.containerNamespace }}/server:v{{ .Chart.AppVersion }}'
@@ -47,3 +63,6 @@ spec:
             httpGet:
               path: '/crn/'
               port: 8111
+          volumeMounts:
+          - name: saml-keys
+            mountPath: /saml-keys
