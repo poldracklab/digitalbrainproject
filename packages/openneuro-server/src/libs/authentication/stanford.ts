@@ -10,6 +10,7 @@ export const requestAuth = (
   res: Response,
   next: NextFunction,
 ) => {
+  // @ts-expect-error
   req.session = {}
   passport.authenticate("stanford")(req, res, next)
 }
