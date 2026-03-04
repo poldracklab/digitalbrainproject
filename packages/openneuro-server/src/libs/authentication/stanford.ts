@@ -10,6 +10,7 @@ export const requestAuth = (
   res: Response,
   next: NextFunction,
 ) => {
+  req.session = {}
   passport.authenticate("stanford")(req, res, next)
 }
 
@@ -17,7 +18,7 @@ export const requestAuth = (
  * Complete a successful login
  */
 export function completeRequestLogin(req, res, next, user) {
-  return req.logIn(user, { session: true }, (err) => {
+  return req.logIn(user, { session: false }, (err) => {
     if (err) {
       Sentry.captureException(err)
       return next(err)
