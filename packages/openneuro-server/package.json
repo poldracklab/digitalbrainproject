@@ -1,6 +1,6 @@
 {
   "name": "@openneuro/server",
-  "version": "4.45.3",
+  "version": "4.46.0",
   "description": "Core service for the OpenNeuro platform.",
   "license": "MIT",
   "main": "src/server.js",
@@ -16,13 +16,13 @@
   "author": "Squishymedia",
   "dependencies": {
     "@apollo/client": "3.13.8",
-    "@apollo/server": "4.12.1",
+    "@apollo/server": "~4.13.0",
     "@apollo/utils.keyvadapter": "3.0.0",
     "@elastic/elasticsearch": "8.13.1",
     "@graphql-tools/schema": "^10.0.0",
     "@keyv/redis": "^4.5.0",
     "@node-saml/passport-saml": "5.1.0",
-    "@openneuro/search": "^4.45.3",
+    "@openneuro/search": "^4.46.0",
     "@sentry/node": "^10.37.0",
     "@sentry/profiling-node": "^10.37.0",
     "base64url": "^3.0.0",
