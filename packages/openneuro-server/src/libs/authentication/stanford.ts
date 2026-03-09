@@ -5,13 +5,13 @@ import * as Sentry from "@sentry/node"
 import { parsedJwtFromRequest } from "./jwt"
 import type { NextFunction, Request, Response } from "express"
 
+
 export const requestAuth = (
   req: Request,
   res: Response,
   next: NextFunction,
 ) => {
-  // @ts-expect-error
-  req.session = {}
+  console.log("requestAuth")
   passport.authenticate("stanford")(req, res, next)
 }
 
@@ -19,6 +19,7 @@ export const requestAuth = (
  * Complete a successful login
  */
 export function completeRequestLogin(req, res, next, user) {
+  console.log("complete request login")
   return req.logIn(user, { session: false }, (err) => {
     if (err) {
       Sentry.captureException(err)
@@ -41,9 +42,11 @@ export const authCallback = (
   res: Response,
   next: NextFunction,
 ) => {
+  console.log("auth callback")
   return passport.authenticate(
     "stanford",
     async (err, user, _info) => {
+       console.log(err)
        if (err) {
         Sentry.captureException(err)
         if (err.type) {
