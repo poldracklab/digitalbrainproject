@@ -10,7 +10,7 @@ export class Strategy extends saml.Strategy {
     options.signatureAlgorithm = options.signatureAlgorithm || 'sha256';
     options.identifierFormat = options.identifierFormat || 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient';
     options.acceptedClockSkewMs = options.acceptedClockSkewMs || 60000;
-    options.attributeConsumingServiceIndex = options.attributeConsumingServiceIndex || false;
+    // options.attributeConsumingServiceIndex = options.attributeConsumingServiceIndex || false;
     options.forceAuthn = options.forceAuthn || false;
     options.skipRequestCompression = options.skipRequestCompression || false;
 
