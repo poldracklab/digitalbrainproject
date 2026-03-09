@@ -108,20 +108,11 @@ export class Strategy extends saml.Strategy {
     }.bind(this);
   }
 
-  _return (url) {
-    return function(req, res) {
-      if (req.session && req.session.returnTo) {
-        url = req.session.returnTo;
-        delete req.session.returnTo;
-      }
-      res.redirect(url || '/');
-    }
-  }
-
-  function metadata () {
+  metadata () {
     return function(req, res) {
       res.type('application/xml');
       res.status(200).send(this.generateServiceProviderMetadata(this._saml.options.decryptionCert));
     }.bind(this)
   }
+}
 
