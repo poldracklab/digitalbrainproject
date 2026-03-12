@@ -4,7 +4,7 @@ import { idps } from "./idps"
 import { attrmap } from "./attributes"
 
 export class Strategy extends saml.Strategy {
-  constructor(options) {
+  constructor(options, verify) {
     // some sensible defaults
     options.protocol = options.protocol || 'https://';
     options.signatureAlgorithm = options.signatureAlgorithm || 'sha256';
@@ -75,13 +75,14 @@ export class Strategy extends saml.Strategy {
     // call the parent method before setting the strategy name,
     // otherwise the name will always be 'saml'
     
-    super(options, (profile, done) => {
-      this.attributeMapper(profile, done);
+    // set up an attribute mapper
+    const attributeMapper = attrmap(options.attributeMap);
+
+    super(options, (req, profile, done) => {
+      attributeMapper(profile, done);
     });
     this.loginPath = options.loginPath;
 
-    // set up an attribute mapper
-    this.attributeMapper = attrmap(options.attributeMap);
 
 
     // set the name of this strategy to either the name passed in

@@ -200,7 +200,8 @@ export const setupPassportAuth = () => {
       passport:           passport,
       decryptionPvkPath: '/saml-keys/saml-pvk',
       decryptionCertPath: '/saml-keys/saml-pub',
-    }
+    },
+    verifyGoogleUser,
   )
   passport.use(PROVIDERS.STANFORD, stanfordStrategy)
   setupGitHubAuth()
