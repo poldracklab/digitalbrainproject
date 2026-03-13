@@ -79,7 +79,10 @@ export class Strategy extends saml.Strategy {
     const attributeMapper = attrmap(options.attributeMap);
 
     super(options, (req, profile, done) => {
-      attributeMapper(profile, done);
+      attributeMapper(profile, (err, mappedProfile) => {
+        if (err) return done(err);
+        verify(req, mappedProfile, done);
+      });
     });
     this.loginPath = options.loginPath;
 

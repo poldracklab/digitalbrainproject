@@ -12,7 +12,11 @@ export const requestAuth = (
   next: NextFunction,
 ) => {
   console.log("requestAuth")
-  passport.authenticate("stanford")(req, res, next)
+  passport.authenticate("stanford", {
+    session: false,
+    state: req.query.redirectPath || null,
+  })(req, res, next)
+  
 }
 
 /**

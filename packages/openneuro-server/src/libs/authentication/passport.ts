@@ -59,10 +59,10 @@ export const loadProfile = (profile): OauthProfile | Error => {
     }
   } else if (profile.provider === PROVIDERS.STANFORD) {
     return {
-      email: profile.emails ? profile.emails[0].value : "",
+      email: profile.email,
       name: profile.displayName || profile.username,
       provider: profile.provider,
-      providerId: profile.id,
+      providerId: profile.nameId,
     }
   } else {
     // Some unknown profile type
@@ -118,6 +118,21 @@ export const verifyORCIDUser = (
     })
     .catch((err) => done(err, null))
 }
+
+ export const verifyStanfordUser = (req, profile, done) => {
+   profile.provider = PROVIDERS.STANFORD
+   const profileUpdate = loadProfile(profile)
+   if (profileUpdate instanceof Error) {
+     return done(profileUpdate, null)
+   }
+   User.findOneAndUpdate(
+     { provider: PROVIDERS.STANFORD, providerId: profileUpdate.providerId },
+     profileUpdate,
+     { upsert: true, new: true, setDefaultsOnInsert: true },
+   )
+     .then((user) => done(null, addJWT(config)(user.toObject())))
+     .catch((err) => done(err, null))
+ }
 
 export const setupPassportAuth = () => {
   // Setup all strategies here
@@ -201,7 +216,7 @@ export const setupPassportAuth = () => {
       decryptionPvkPath: '/saml-keys/saml-pvk',
       decryptionCertPath: '/saml-keys/saml-pub',
     },
-    verifyGoogleUser,
+    verifyStanfordUser,
   )
   passport.use(PROVIDERS.STANFORD, stanfordStrategy)
   setupGitHubAuth()
