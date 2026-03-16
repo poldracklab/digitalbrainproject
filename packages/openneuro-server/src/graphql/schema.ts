@@ -408,6 +408,7 @@ export const typeDefs = `
   enum UserProvider {
     google
     orcid
+    stanford
   }
 
   # Connection for a list of datasets
