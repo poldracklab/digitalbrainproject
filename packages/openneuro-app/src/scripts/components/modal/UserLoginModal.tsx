@@ -44,7 +44,7 @@ export const UserLoginModal = ({
               >
                 <Button
                   className="login-button"
-                  label="Migrate Google to ORCID"
+                  label="Google"
                   icon="fab fa-google"
                   iconSize="23px"
                 />

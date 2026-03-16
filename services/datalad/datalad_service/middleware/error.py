@@ -11,3 +11,5 @@ class CustomErrorHandlerMiddleware:
                 logging.exception(f'Unhandled exception: {exc}', exc_info=eval(exc))
             else:
                 logging.error('Request failed without exception details')
+                logging.error(req)
+                logging.error(resp)
