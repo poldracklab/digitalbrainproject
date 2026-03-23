@@ -44,5 +44,6 @@ export const send = (email: Record<string, string>): Promise<Response> => {
     // Mailjet is not configured, instead log emails
     /* eslint-disable no-console */
     console.dir(email)
+    return Promise.resolve({} as Response)
   }
 }
