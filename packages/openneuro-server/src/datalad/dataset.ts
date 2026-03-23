@@ -57,15 +57,15 @@ export const createDataset = async (
   )
   try {
     const ds = new Dataset({ id: datasetId, uploader })
-    await request
-      .post(`${getDatasetWorker(datasetId)}/datasets/${datasetId}`)
-      .set("Accept", "application/json")
-      .set("Cookie", generateDataladCookie(config)(userInfo))
     // Write the new dataset to mongo after creation
     await ds.save()
     const md = new Metadata({ datasetId, affirmedDefaced, affirmedConsent })
     await md.save()
     await giveUploaderPermission(datasetId, uploader)
+    await request
+      .post(`${getDatasetWorker(datasetId)}/datasets/${datasetId}`)
+      .set("Accept", "application/json")
+      .set("Cookie", generateDataladCookie(config)(userInfo))
     // Creation is complete here, mark successful
     await updateEvent(event)
     await subscriptions.subscribe(datasetId, uploader)
