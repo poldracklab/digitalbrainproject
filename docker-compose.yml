@@ -8,6 +8,9 @@ services:
     env_file: ./config.env
     working_dir: /srv
     command: bash -c 'yarn install && yarn pnpify tsc-watch -b --onSuccess "touch /watch/done"'
+    oom_score_adj: -1000
+    environment:
+      - NODE_OPTIONS=--max-old-space-size=16384
     healthcheck:
       test: test -f /watch/done || exit 1
       interval: 5s
@@ -42,6 +45,8 @@ services:
     extends:
       service: node
     command: bash -c 'yarn workspace @openneuro/server start'
+    volumes:
+      - ./certs:/saml-keys
     healthcheck:
       test: curl -f http://localhost:8111/crn || exit 1
       interval: 5s
@@ -190,9 +195,12 @@ services:
     image: docker.io/library/nginx:1.16.1
     volumes:
       - ./nginx/nginx.dev.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./certs/nginx_cert.pem:/etc/nginx/ssl/live/openneuro.org/fullchain.pem:ro
+      - ./certs/nginx_key.pem:/etc/nginx/ssl/live/openneuro.org/privkey.pem:ro
     ports:
       - "8110:8110"
       - "9876:80"
+      - "443:443"
     depends_on:
       server:
         condition: service_healthy
