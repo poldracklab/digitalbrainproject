@@ -36,7 +36,7 @@ export const mailjetFormat = (email: Record<string, string>) => ({
  * @param email Nodemailer style email record
  */
 export const send = (email: Record<string, string>): Promise<Response> => {
-  if (perform_api_call) {
+  if (false && perform_api_call) {
     return transport
       .post("send", { version: "v3.1", perform_api_call })
       .request(mailjetFormat(email))
