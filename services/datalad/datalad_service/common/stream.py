@@ -1,5 +1,6 @@
 import os
 import aiofiles
+import sentry_sdk
 
 from datalad_service.common.const import CHUNK_SIZE_BYTES
 
@@ -19,7 +20,8 @@ async def update_file(path, stream):
                 await tmp.write(chunk)
             # Done streaming, replace the file
             os.replace(tmp.name, path)
-        except:
+        except Exception as e:
+            sentry_sdk.capture_exception(e)
             # Only remove in the failure case, we want the file if the rest succeeds
             os.remove(tmp.name)
             raise
