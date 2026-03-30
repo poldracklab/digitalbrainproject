@@ -45,7 +45,7 @@ export const draftRetentionWarning = ({
 </head>
 <body>
 	<div class="top-bar">
-		<img src="${siteUrl}/assets/email-header.1cb8bf76.png" />
+		<img src="${siteUrl}/assets/email-header-GR_ZGg8w.png" />
 	</div>
 	<div class="content">
 		<h2>Hi, ${name}</h2>
@@ -56,7 +56,7 @@ export const draftRetentionWarning = ({
 		</p>
 
 		<p>
-			To preserve your data, please create a snapshot or update your draft. Please see our data retention policy for more information: <a href="https://docs.openneuro.org/policy/data_retention.html">Data Retention Policy.</a>
+			To preserve your data, please create a snapshot or update your draft. No action is required if you no longer need this draft data. Please see our data retention policy for more information: <a href="https://docs.openneuro.org/policy/data_retention.html">Data Retention Policy.</a>
 		</p>
 
 		<p>
