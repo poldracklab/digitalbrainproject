@@ -4,6 +4,7 @@ import { Client } from "@elastic/elasticsearch"
 const elasticConfig = {
   node: config.elasticsearch.connection || "http://mock-client",
   maxRetries: 3,
+  tls: { rejectUnauthorized: false },
 }
 
 export const elasticClient = new Client(elasticConfig)

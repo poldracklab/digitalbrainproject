@@ -40,6 +40,7 @@ export default async function main(): Promise<void> {
     node: process.env.ELASTICSEARCH_CONNECTION,
     maxRetries: 10,
     requestTimeout: 60000,
+    tls: { rejectUnauthorized: false },
   })
   try {
     await createIndices(elasticClient)
