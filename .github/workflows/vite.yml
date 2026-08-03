@@ -1,8 +1,8 @@
-name: TypeScript tests and coverage
+name: Vite production build
 
 on:
-  push: { branches: [master] }
-  pull_request: { branches: [master] }
+  push: { branches: [dbp, master] }
+  pull_request: { branches: [dbp, master] }
 defaults:
   run:
     working-directory: ./services/datalad
