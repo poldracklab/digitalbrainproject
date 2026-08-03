@@ -2,9 +2,9 @@ name: ESLint
 
 on:
   push:
-    branches: [main, master]
+    branches: [dbp, main, master]
   pull_request:
-    branches: [main, master]
+    branches: [dbp, main, master]
 
 jobs:
   eslint:
